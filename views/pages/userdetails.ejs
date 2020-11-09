@@ -1,0 +1,47 @@
+
+
+
+<div class="row" >
+    <div class="col-6">
+     <div class="box-footer">
+        <div class="pull-right paddA10">
+          
+       </div>
+       <p><a href=" http://localhost:5000/register " class="btn btn-primary" role="button">Add</a></p> 
+</div>
+    </div>
+  </div>
+  <div class="alert alert-success">
+    <strong>Success!</strong> 
+  </div>
+ 
+  <div class="">
+        <table border="0" >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Phone No</th>
+                    <th>Images</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+              <% 
+              result.forEach(function(result,i){ %>
+                <tr>
+                    <td><%- result.username %></td>
+                    <td><%- result.email %></td> 
+                    <td><%- result.password %></td>  
+                    <td><%- result.phone %></td>
+                    <td> <img src='http://localhost:5000/<%= result.images %>' width="50" height="50"></td>
+                    <td>
+                <a href='http://localhost:5000/edit/<%= result._id %>' class="editlink" data-id="<%= result._id %>" data-key="<%= i %>">Edit</a> &nbsp;
+                <a href='http://localhost:5000/delete/<%= result._id %>' class="editlink" data-id="<%= result._id %>" data-key="<%= i %>">Delete</a>
+                </td>
+                </tr>
+                <% } ) %>
+            </tbody>
+        </table>  

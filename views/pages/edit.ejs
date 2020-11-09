@@ -1,0 +1,29 @@
+<head>
+    <title> Edit User</title>
+</head>
+
+<form action="/edit/<%= _id %>" method="post" name="form1">
+    <table width="25%" border="0">
+        <tr> 
+            <td>Name</td>
+            <td><input type="text" name="uname"  value="<%= username %>" /></td>
+        </tr>
+        <tr> 
+            <td>password</td>
+            <td><input type="password" name="pwd" value="<%= password %>" /></td>
+        </tr>
+        <tr> 
+            <td>phone</td>
+            <td><input type="text" name="mnumber" value="<%= phone %>" /></td>
+        </tr>
+        <tr> 
+            <td>Email</td>
+            <td><input type="text" name="email" value="<%= email %>" /></td>
+        </tr>
+        <tr> 
+            <td></td>
+            <td><input type="submit" name="Submit" value="Edit" /></td>
+        </tr>
+    </table>
+    <input type="hidden" name="_method" value="get" />
+</form>

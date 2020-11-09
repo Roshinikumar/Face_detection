@@ -1,0 +1,66 @@
+<html>
+<body><head>
+	<title>employee details</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+<h2>Register</h2>
+<form name="form1" method="POST" action="/register" enctype="multipart/form-data">
+
+	<% if (locals.errors) { %>
+    <ul>
+        <% Object.values(errors).forEach(function(error){
+			
+			if(error!=""){%>
+			  <li><%= error.msg %></li>
+			  <% }%>
+        <% }); %>
+    </ul>
+    <% } %>
+	<table>
+		<tr>
+		<td>User name</td>
+		<td><input type="text" name="uname" />
+
+		</td>
+		<tr>
+		<td>password</td>
+		<td><input type="password" name="pwd" /></td>
+		<!-- {% if (error.passsword) %}
+		<p>{{error.password}}</p>
+		{% endif %} -->
+        </tr>
+        <tr>
+        <td>Phone</td>
+		<td><input type="text" name="mnumber" /></td>
+		<!-- {% if (error.phone) %}
+		<p>{{error.phone}}</p>
+		{% endif %} -->
+        </tr>
+        <tr>
+        <td>Email</td>
+		<td><input type="text" name="email"/></td>
+		<!-- {% if (error.email) %}
+		<p>{{error.email}}</p>
+		{% endif %} -->
+		</tr>
+		<tr><td>Select your files:</td>
+			<td><input type="file" name="profile_pic"/></td>
+		</tr>
+		<tr>
+		<td colspan="2"><input type="submit" value="Save" ></td>
+		</tr>
+
+		
+			
+	
+	</table>
+	
+	</form>	
+
+	
